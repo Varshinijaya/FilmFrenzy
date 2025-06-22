@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Movie Review Platform with Star Ratings</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+    
+      font-family: 'Segoe UI', sans-serif;
+      background:linear-gradient(to right,#151515,lightblue);
+      color: #ffffff;
+      
+    }
+    .navbar{
+      width: 100%;
+      height: 50px;
+      background:linear-gradient(lo right,#151515,lightblue);
+      box-shadow: 2px 4px 10px black;
+      position: fixed;
+      top: 0;
+      z-index: 10;
+      font-weight: bolder;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      
+    }
+
+    .navbar a{
+      color:white;
+      text-decoration: none;
+    padding: 15px;
+      font-size:1.7em ;
+      text-shadow: 4px 2px 0px black;
+      
+      
+    }
+    
+    .navbar a:hover{
+      text-decoration: underline;
+      text-shadow: 2px 2px 6px black;
+      
+    }
+
+    h1 {
+      
+      color:white;
+      margin-bottom: 50px;
+      text-shadow: 2px 2px 2px black;
+     margin-top: 40px;
+      
+    }
+
+    .search-container {
+      position: relative;
+      max-width: 700px;
+      margin: 0 auto 30px;
+      margin-top: 100px;
+  
+    }
+
+    .search-container input[type="text"] {
+      width: 100%;
+      padding: 14px 45px 14px 15px;
+      border-radius: 30px;
+      border: none;
+      background-color:#eee;
+      color:black;
+      font-size: 16px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .search-container input[type="text"]:focus {
+      outline: none;
+      box-shadow: 0 0 10px white;
+    }
+
+    .search-container::after {
+      content: "";
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none;
+      color: #ccc;
+    }
+
+    .container {
+      background-color:#fff;
+      padding: 30px;
+      border-radius: 12px;
+      max-width: 700px;
+      width: 100%;
+      margin: auto;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+    border: none; outline: none;
+      border-radius: 6px;
+      background-color:#eee;
+      color:black;
+      font-size: 15px;
+    }
+
+    .form-group textarea {
+      
+      height: 100px;
+    }
+
+    .stars {
+      display: flex;
+      gap: 8px;
+      margin: 10px 0;
+    }
+
+    .star {
+      font-size: 26px;
+      cursor: pointer;
+      color: #888;
+      transition: color 0.2s;
+    }
+
+    .star.selected,
+    .star.hovered {
+      color: black;
+    }
+    button {
+      padding: 10px 20px;
+      padding: 12px;
+      text-shadow: 2px 2px 2px white;
+      border-radius: 6px;
+      background-color: lightblue;
+      color: black;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background-color: skyblue;
+    }
+
+    /* Review Section */
+    .review-wrapper {
+      max-width: 700px;
+      margin: 40px auto 0 auto;
+    }
+
+    .review-card {
+      background-color: #fff;
+      padding: 20px;
+      margin-bottom: 15px;
+      border-left: 5px solid rgb(55, 128, 153);
+      border-radius: 8px;
+      animation: fadeIn 0.4s ease;
+    }
+
+    .review-card h3 {
+      margin: 0 0 6px;
+      color: rgb(55, 128, 153);
+      
+    }
+
+    .review-card .reviewer {
+      font-weight: bold;
+      color:black;
+    }
+
+    .review-card p {
+      margin-top: 6px;
+      line-height: 1.4;
+      color: black;
+      font-weight:bold;
+      
+    }
+
+    .review-card .stars-display {
+      color:rgb(55, 122, 144);
+      font-size: 18px;
+      margin-top: 5px;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+<h1> FilmFrenzy Reviews</h1>
+<div>
+<a href="index.html">Home</a>
+<a href="login.html">Login</a>
+<a href="#">Reviews</a></div>
+
+  </div>
+
+  <!-- Header and Search Bar -->
+  
+  <div class="search-container">
+    <input type="text" id="searchBar" placeholder="Search reviews by movie name..." oninput="filterReviews()" />
+  </div>
+
+  <!-- Review Form Container -->
+  <div class="container">
+    <div class="form-group">
+      <input type="text" id="nameInput" placeholder="Your Name" />
+      <input type="text" id="movieInput" placeholder="Movie Title" />
+      <textarea id="reviewInput" placeholder="Write your review..."></textarea>
+
+      <div class="stars" id="starRating">
+        <span class="star" data-value="1">★</span>
+        <span class="star" data-value="2">★</span>
+        <span class="star" data-value="3">★</span>
+        <span class="star" data-value="4">★</span>
+        <span class="star" data-value="5">★</span>
+      </div>
+
+      <button onclick="submitReview()">Submit Review</button>
+    </div>
+  </div>
+
+  <!-- Review Display Section -->
+  <div class="review-wrapper">
+    <div class="review-list" id="reviewsContainer">
+      <!-- Reviews appear here -->
+    </div>
+  </div>
+
+  <script>
+    let selectedRating = 0;
+
+    const stars = document.querySelectorAll(".star");
+
+    stars.forEach(star => {
+      star.addEventListener("mouseover", () => {
+        const value = parseInt(star.dataset.value);
+        highlightStars(value);
+      });
+
+      star.addEventListener("mouseout", () => {
+        highlightStars(selectedRating);
+      });
+
+      star.addEventListener("click", () => {
+        selectedRating = parseInt(star.dataset.value);
+        highlightStars(selectedRating);
+      });
+    });
+
+    function highlightStars(rating) {
+      stars.forEach(star => {
+        const value = parseInt(star.dataset.value);
+        if (value <= rating) {
+          star.classList.add("selected");
+        } else {
+          star.classList.remove("selected");
+        }
+      });
+    }
+
+    function submitReview() {
+      const name = document.getElementById("nameInput").value.trim();
+      const movie = document.getElementById("movieInput").value.trim();
+      const review = document.getElementById("reviewInput").value.trim();
+
+      if (!name || !movie || !review || selectedRating === 0) {
+        alert("Please fill in all fields and select a star rating.");
+        return;
+      }
+
+      const container = document.getElementById("reviewsContainer");
+
+      const card = document.createElement("div");
+      card.className = "review-card";
+      card.setAttribute("data-movie", movie.toLowerCase());
+
+      const starsDisplay = "★".repeat(selectedRating) + "☆".repeat(5 - selectedRating);
+
+      card.innerHTML = `
+        <h3>${movie}</h3>
+        <div class="reviewer">Reviewed by <b>${name}</b></div>
+        <div class="stars-display">${starsDisplay}</div>
+        <p>${review}</p>
+      `;
+
+      container.prepend(card);
+
+      // Reset form
+      document.getElementById("nameInput").value = "";
+      document.getElementById("movieInput").value = "";
+      document.getElementById("reviewInput").value = "";
+      selectedRating = 0;
+      highlightStars(0);
+    }
+
+    function filterReviews() {
+      const query = document.getElementById("searchBar").value.toLowerCase();
+      const reviews = document.querySelectorAll(".review-card");
+
+      reviews.forEach(review => {
+        const movie = review.getAttribute("data-movie");
+        review.style.display = movie.includes(query) ? "block" : "none";
+      });
+    }
+  </script>
+</body>
+</html>

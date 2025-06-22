@@ -1,0 +1,316 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FILMFRENZY</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Sen:wght@400..800&display=swap');
+</style>
+
+</head>
+<body>
+<!-- Navbar -->
+
+    <div class="navbar">
+        <div class="navbar-container">
+            <div class="logo-container">
+                <h1 class="logo">FilmFrenzy</h1>
+             </div>
+            <div class="menu-container">
+                <div class="menu-list">
+                    <a href="#"class="menu-list-item active" >Home</a>
+                    <a href="#movies"class="menu-list-item" >Movies</a>
+                    <a href="#series"class="menu-list-item">Series</a>
+                    <a href="#" class="menu-list-item">Popular</a>
+                    <a href="login.html" class="menu-list-item">Login</a>
+                    <a href="review.html" class="menu-list-item">Reviews</a>
+
+                </div>
+            </div>
+            <div class="profile-container">
+                <img class="profile-picture" src="./img/profile.avif" alt="">
+                <div class="profile-text-container">
+                    <span class="profile-text">Profile</span>
+                    <i class="fa-solid fa-caret-down"></i>
+                </div> 
+                <div class="toggle">
+                    <i class="fa-solid fa-moon toggle-icon"></i>
+                    <i class="fa-solid fa-sun toggle-icon"></i>
+                    <div class="toggle-ball"></div>
+                </div>
+            </div>
+
+
+            
+        </div>
+    </div>
+    <div class="sidebar">
+        <i class="left-menu-icon fa-solid fa-magnifying-glass"></i>
+        <i class=" left-menu-icon fa-solid fa-house-chimney"></i>
+        <i class="left-menu-icon fa-solid fa-users"></i>
+        <i class="left-menu-icon fa-solid fa-bookmark"></i>
+        <i class="left-menu-icon fa-solid fa-tv"></i>
+        <i class="left-menu-icon fa-solid fa-hourglass-start"></i>
+        <i class="left-menu-icon fa-solid fa-cart-shopping"></i>
+      
+    </div>
+
+
+    <!-- Container -->
+     <div class="container">
+        <div class="content-container">
+             <div class="featured-content" style="background:linear-gradient(to bottom,rgba(0,0,0,0),#151515), url('./img/f-2.jpg');"> 
+                 
+                <img class="featured-title" src="./img/f-t-2.png" alt="">
+                <p class="featured-desc">The story follows dysfunctional characters from the fictional town of Winden in Germany, as they pursue the truth in the aftermath of a child's disappearance. When two children go missing in a small German town, its sinful past is exposed along with the double lives and fractured relationships that exist among four families as they hunt for the kids.</p>
+                <button class="featured-button">WATCH</button>
+                
+                </div>
+            
+            <div class="movie-list-container" id="movies">
+                <h1 class="movie-list-title">NEW RELEASES</h1>
+                <div class="movie-list-wrapper">
+                    <div class="movie-list">
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="./img/1.jpeg" alt="">
+                            <span class="movie-list-item-title"><b>HER</b></span>
+                            <p class="movie-list-item-desc"><i>A sensitive and soulful man earns a living by writing personal letters for other people.</i> </p>
+                            <button class="movie-list-button" >WATCH NOW</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="./img/2.jpeg" alt="">
+                            <span class="movie-list-item-title"><B>STAR WARS</B></span>
+                            <p class="movie-list-item-desc"><I>The Star Wars franchise depicts the adventures of characters "a long time ago in a galaxy far, far away" across multiple fictional eras.</I> </p>
+                            <button class="movie-list-button">WATCH NOW</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="./img/3.jpg" alt="">
+                            <span class="movie-list-item-title"><b>STORM</b></span>
+                            <p class="movie-list-item-desc"><I>The Star Wars franchise depicts the adventures of characters "a long time ago in a galaxy far, far away" across multiple fictional eras</I> </p>
+                            <button class="movie-list-button">WATCH NOW</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="./img/4.jpg" alt="">
+                            <span class="movie-list-item-title"><b>1917</b></span>
+                            <p class="movie-list-item-desc"><I>about two young British soldiers tasked with a dangerous mission to deliver a message and stop a disastrous attack. </I></p>
+                            <button class="movie-list-button">WATCH NOW</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="./img/5.jpg" alt="">
+                            <span class="movie-list-item-title">AVENGERS END GAME</span>
+                            <p class="movie-list-item-desc"><I>A 2019 American superhero film that serves as the conclusion to the Marvel Cinematic Universe's Infinity Saga.</I></p>
+                            <button class="movie-list-button">WATCH NOW</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="./img/6.jpg" alt="">
+                            <span class="movie-list-item-title">SAN ANDREAS</span>
+                            <p class="movie-list-item-desc"><I>San Andreas is an open-world action-adventure game where players control Carl "CJ" Johnson, who returns to his home city of Los Santos after five years away. </I></p>
+                            <button class="movie-list-button">WATCH NOW</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="./img/7.jpg" alt="">
+                            <span class="movie-list-item-title">T-REX</span>
+                            <p class="movie-list-item-desc"> <I>1992 after his mother's murder and finds his old street gang has lost much of their territory. </I></p>
+                            <button class="movie-list-button">WATCH NOW</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="./img/8.jpg" alt="">
+                            <span class="movie-list-item-title">OBLIVION</span>
+                            <p class="movie-list-item-desc"><I>A state of being forgotten, unknown, or completely lost</I></p>
+                            <button class="movie-list-button">WATCH NOW</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="./img/9.jpg" alt="">
+                            <span class="movie-list-item-title">HOBBIT</span>
+                            <p class="movie-list-item-desc"><I>It follows the hobbit Bilbo Baggins as he's swept into an adventure to reclaim treasure from a dragon, Smaug</I></p>
+                            <button class="movie-list-button">WATCH NOW</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="./img/10.jpg" alt="">
+                            <span class="movie-list-item-title">DOLLITLE</span>
+                            <p class="movie-list-item-desc"><I>Dr. John Dolittle, a Welsh veterinarian who can communicate with animals, as he embarks on an adventure to find a cure for the gravely ill Queen Victoria. </I></p>
+                            <button class="movie-list-button">WATCH NOW</button>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-chevron-right arrow"></i>
+                </div>
+            </div>
+
+           
+
+
+<!-- Reviews -->
+            <H1 class="movie-list-title" style="padding-left: 15px;">TOP RATINGS</H1>
+            <DIV class="reviews">
+                
+                <div class="review">
+                    <img class="review-img" src="./img/img1.jpeg" alt="">
+                    <h3>THE SHAWSHANK
+                        <p>REDEMPTION</p></h3>
+                        <p><span class="sp1">4.9</span>(  ★ ★ ★ ★  ★)</p>
+                        <div class="review-item">
+                        <img  src="./img/imdb.png" >
+                        <h2 class="rate1">9.8/10</h2>
+                        <img class="rateimg" src="./img/Rotten_Tomatoes_logo.svg.png" alt="">
+                        <h2 class="rate2">89%</h2>
+                        <button onclick="watch()"> Watchlist </button>
+                    </div>
+                </div>
+                <div class="review">
+                    <img class="review-img" src="./img/img2.jpeg" alt="">
+                    <H3>THE GODFATHER</H3>
+                    <p><span class="sp1">4.7</span>(  ★ ★ ★ ★)</p>
+                    <div class="review-item">
+                        <img src="./img/imdb.png" >
+                        <h2 class="rate1">9.7/10</h2>
+                        <img class="rateimg" src="./img/Rotten_Tomatoes_logo.svg.png" alt="">
+                        <h2 class="rate2">87%</h2>
+                        <button onclick="watch()"> Watchlist </button>
+                    </div>
+                </div>
+                <div class="review">
+                    <img class="review-img" src="./img/img3.jpeg" alt="">
+                    <H3>DARK KNIGHT</H3>
+                    <p><span class="sp1">4.5</span>(  ★ ★ ★ ★)</p>
+                    <div class="review-item">
+                        <img src="./img/imdb.png" >
+                        <h2 class="rate1">9.9/10</h2>
+                        <img class="rateimg" src="./img/Rotten_Tomatoes_logo.svg.png" alt="">
+                        <h2 class="rate2">95%</h2>
+                        <button onclick="watch()"> Watchlist </button>
+                    </div>
+                </div>
+                <div   class="review">
+                    <img class="review-img" src="./img/13.jpg" alt="">
+                    <H3>1920</H3>
+                    <p><span style="color:red">3.2</span>(  ★ ★ ★ )</p>
+                    <div class="review-item">
+                        <img src="./img/imdb.png" >
+                        <h2 class="rate1">6.0/10</h2>
+                        <img class="rateimg" src="./img/Rotten_Tomatoes_logo.svg.png" alt="">
+                        <h2 class="rate2">857%</h2>
+                        <button onclick="watch()"> Watchlist </button>
+                    </div>
+                    
+
+                </div>
+                <div class="review">
+                    <img class="review-img"  src="./img/img5.webp" alt="">
+                    <H3>LORD OF RINGS</H3>
+                    <p><span class="sp1">4.5</span>(  ★ ★ ★ ★)</p>
+                    <div class="review-item">
+                        <img src="./img/imdb.png" >
+                        <h2 class="rate1">9.5/10</h2>
+                        <img class="rateimg" src="./img/Rotten_Tomatoes_logo.svg.png" alt="">
+                        <h2 class="rate2">82%</h2>
+                        <button> Watchlist </button>
+                    </div>
+                </div>
+            </DIV>
+            <!-- Posters -->
+             <h1 class="movie-list-title" id="series">Most Watched Series Today</h1>
+    <div class="poster" >
+        <div class="posters">
+            <img src="./img/one.jpg" alt="">
+            <h3 style="text-shadow: 4px 4px 7px black;" >BREAKING BAD</h3>
+            <p style="text-shadow: 4px 4px 7px black;">★★★★★</p>
+            <img class="poster-img" src="./img/one1.jpg" alt="">
+        </div>
+        <div class="posters">
+            <img src="./img/two.avif" alt="">
+            <h3 style="text-shadow: 4px 4px 7px black;">GAME OF THRONES</h3>
+            <p style="text-shadow: 4px 4px 7px black;">★★★★☆</p>
+           <img class="poster-img" src="./img/two2.jpg" alt="">
+
+        </div>
+        <div class="posters">
+            <img src="./img/three.jpg" alt="">
+            <h3 style="text-shadow: 4px 4px 7px black;">DARK</h3>
+            <p style="text-shadow: 4px 4px 7px black;">★★★★☆</p>
+            <img class="poster-img" src="./img/three3.jfif" alt="">
+
+        </div>
+        <div class="posters">
+            <img src="./img/four.jfif" alt="">
+            <h3 style="text-shadow: 4px 4px 7px black;">MONEY HEIST</h3>
+            <p style="text-shadow: 4px 4px 7px black;">★★★☆☆</p>
+            <img class="poster-img" src="./img/four4.jpg" alt="">
+
+        </div>
+        <div class="posters">
+            <img src="./img/five.png" alt="">
+            <h3 style="text-shadow: 4px 4px 7px black;">MANIFEST</h3>
+            <p style="text-shadow: 4px 4px 7px black;">★★★☆☆</p>
+             <img class="poster-img" src="./img/five5.png" alt="">
+
+        </div>
+
+    </div>
+
+            <!-- Background review -->
+             <div class="background-review">
+                <div class="background-content">
+                    <p class="content2"> Escape Into a Movie  Anytime, Anywhere! 🎬</p>
+                    <h2 class="content1">Don't just watch... experience and share your reviews</h2>
+                    <button class="background-btn">Explore More</button>
+                </div>
+             </div>
+
+ 
+     <!-- Footer -->
+      <footer>
+        <div class="waves">
+            <div class="wave" id="wave1"></div>
+            <div class="wave" id="wave2"></div>
+            <div class="wave" id="wave3"></div>
+            <div class="wave" id="wave4"></div>
+        </div>
+        <ul class="social-icons">
+            <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+        </ul>
+        <ul class="menu">
+           <li>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Reviews</a>
+            <a href="#">Teams</a>
+            <a href="#">Contacts</a>
+           </li>
+        </ul>
+        <p>&copy; FilmFrenzy | All Rights Reserved</p>
+      </footer>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="app.js"></script>
+</body>
+</html>
